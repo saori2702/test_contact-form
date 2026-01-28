@@ -2,12 +2,13 @@
     テストお問い合わせフォーム
 
 ## 環境構築
-git@github.com:saori2702/test_contact-form.git
+git clone git@github.com:saori2702/test_contact-form.git
+cd test_contact-form
 docker-compose up -d
-
 docker-compose exec php bash
 composer install
-cp .env.example.env,環境変数を変更
+cp .env.example .env,環境変数を変更
+php artisan key:generate
 php artisan migrate
 php artisan db:seed
 
